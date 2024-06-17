@@ -3,27 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Object Detection Using Webcam</title>
+    <title>Object Detection with Speech</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            flex-direction: column;
-        }
-        video {
-            border: 1px solid black;
-        }
-        canvas {
+        #webcam, #canvas {
             position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #canvas {
+            z-index: 1;
         }
     </style>
 </head>
 <body>
-    <video id="webcam" autoplay playsinline width="640" height="480"></video>
-    <canvas id="canvas" width="640" height="480"></canvas>
+    <video id="webcam" autoplay playsinline></video>
+    <canvas id="canvas"></canvas>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
     <script src="app.js"></script>
